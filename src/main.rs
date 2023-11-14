@@ -21,7 +21,7 @@ async fn main() {
     let graph_arc = Arc::new(Mutex::new(graph));
     let graph_clone = Arc::clone(&graph_arc);
     // Required simulation duration.
-    let simulation_duration = Duration::from_secs(20);
+    let simulation_duration = Duration::from_secs(10000);
     // Use `timeout` to limit the scheduler's execution time to the simulation duration.
     let result = time::timeout(simulation_duration, async {
         payment_scheduler::schedule_payments(graph_clone).await;
