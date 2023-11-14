@@ -24,7 +24,7 @@ The simulator uses Rust's Arc and Mutex types to share the graph structure acros
 
 ## Future Work
 
-The simulator can be made more realistic by :
-- Using real world latency data to simulate latencies
-- Adding the logic to compute channel failure probabilities in the path computation
-- Rerouting failed payments
+The simulator can be made more realistic by incorporating:
+- Real world latency data to simulate latencies
+- Logic to compute channel failure probabilities in the path computation
+- Rerouting logic failed payments
