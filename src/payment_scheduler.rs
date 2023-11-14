@@ -25,7 +25,7 @@ pub async fn schedule_payments(graph: Arc<Mutex<DiGraph<usize, EdgeAttributes>>>
             // amount is assumed to be 10000 satoshis here. This can be set according to simulation
             // needs. Higher amounts can lead to more payment failures both due to balance
             // availability and no paths found.
-            let (path,timelocks,amounts) = find_path::dijkstra(Arc::clone(&graph), sender, recipient,1000000.0);
+            let (path,timelocks,amounts) = find_path::dijkstra(Arc::clone(&graph), sender, recipient,1000.0);
 
             // Create a Payment instance
             let mut payment = payment_router::Payment::new(payment_id,path,timelocks,amounts);
