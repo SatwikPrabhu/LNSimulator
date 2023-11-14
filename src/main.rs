@@ -13,7 +13,7 @@ use log::{info, error};
 #[tokio::main]
 async fn main() {
     // Initialize the logger
-    WriteLogger::init(LevelFilter::Info, Config::default(), File::create("sim.log").unwrap()).unwrap();
+    WriteLogger::init(LevelFilter::Info, Config::default(), File::create("Path_to_log_file/sim.log").unwrap()).unwrap();
     info!("Starting the program");
     // Obtain the graph structure from the json file.
     let graph = create_graph::convert_networkx_to_petgraph("/Users/redhawk/RustroverProjects/LNsimulator/graph_data/json_graph1.json");
