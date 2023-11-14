@@ -16,7 +16,7 @@ async fn main() {
     WriteLogger::init(LevelFilter::Info, Config::default(), File::create("Path_to_log_file/sim.log").unwrap()).unwrap();
     info!("Starting the program");
     // Obtain the graph structure from the json file.
-    let graph = create_graph::convert_networkx_to_petgraph("/Users/redhawk/RustroverProjects/LNsimulator/graph_data/json_graph1.json");
+    let graph = create_graph::convert_networkx_to_petgraph("Path_to_json_file/json_graph1.json");
     // Convert the graph so that it can be shared across concurrent payments.
     let graph_arc = Arc::new(Mutex::new(graph));
     let graph_clone = Arc::clone(&graph_arc);
